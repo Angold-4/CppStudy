@@ -73,6 +73,12 @@ int main()
 
     decltype(i4) dc;
     // decltype((i4)) dd; error: dd is a refrence, remember that decltype((variable)) is always a refrence
+
+    // decltype vs auto
+    // 1. both of them can define a object's type. auto using compiler to caculate the return value of the statement but decltype just try to analyse the statement and no need to caculate the value
+    // 2. the auto value will ignore the top-level const(itself) (const int -> int) but the decltype won't
+    // 3. decltype's type is relative to the expression form 
+
     
     return 0;
 }

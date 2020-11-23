@@ -93,7 +93,7 @@ int main()
     const int* p2 = &v2, * const p3 = &i, & s2 = v2;
     
     s1 = v2; // legal, assign
-    // p1 = p2; illegal, int* pointer cannot point to const int* pointer 
+    // p1 = p2; illegal, int* pointer cannot point to const int* pointer (low-level const)
     p2 = p1; // legal, p2 is a const int pointer which can point to int pointer (exception)
     // p1 = p3; // illegal, same as p1 = p2
     p2 = p3; // legal, same as p2 = p1

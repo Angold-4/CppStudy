@@ -55,7 +55,9 @@ int main()
     int* p2 = 0;
 
     // pointer vs refrence
-    // pointer is a variable but ref are not, which means the pointer can hace second assignment
+    // 1. pointer pointer to a object, refrence "bind" to a object, both of them achieved indirect access to objects
+    // 2. the pointer is an objet which means can assign it and copy it. and a pointer can point to mutiple objects(not at the same time)
+    // 3. the refrence is not an object which means it cannot be re-bind after initialization
 
     // void pointer
     double d = 3.14159, * pd = &d;
