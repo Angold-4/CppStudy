@@ -159,6 +159,65 @@ int main()
     }
     cout << "The total string is that: " << result1 << endl;
 
+    // process single string
+    string s18("Some String");
+    // output single string every line
+    for (auto s18 : str)  // range for statement
+        cout << s18 << endl; // (the type of variable 18 is char)
+    // format: 
+    // for (declaration : expression)
+    //     statement;
+    // declaration means define a variable, this variable will be used to access the basic elements in the sequence
+    // each iteration, this variable will be initialized to the next element value of part expression
+
+    // caculate the punctation
+    string s19("Hello, World!!!!!!!");
+    decltype(s19.size()) punct_cnt = 0; // type punct_cnt is size_type
+    for (auto c : s19)
+        if (ispunct(c))
+            ++punct_cnt;
+    cout << punct_cnt
+        << " punctuation characters in " << s19 << endl;
+    // output:
+    // 8 punctuation characters in Hello, World!!!!!!!
+
+    // change the single string
+    // if wants to change the single string, must define the declaration in range for statement with refrence
+    string s20("Hello, World!!!!!!!!!!!");
+    for (auto& c1 : s20)
+        c1 = toupper(c1);
+    cout << s20 << endl;  // output: HELLO, WORLD!!!!!!!!!!!
+
+    // change the select string
+    // 0 <= subscript([]) < string.size()
+    string s21("Some String");
+    if (!s21.empty())
+        s21[0] = tolower(s21[0]);
+    cout << s21 << endl;
+    
+    // change multiple select string
+    string s22("hello, world");
+    for (decltype(s22.size()) index = 0; index != s22.size() && !isspace(s22[index]); ++index)
+        s22[index] = toupper(s22[index]);
+    cout << s22 << endl;
+
+    
+    // random access
+    /*
+    const string hexdigits = "0123456789ABCDEF";
+    cout << "Enter a series of numbers between 0 and 15"
+        << " separated by spaces. Hit Enter when finished: "
+        << endl;
+    string result2;
+    string::size_type sn;
+    while (cin >> sn)
+        if (sn < hexdigits.size())
+            result2 += hexdigits[sn];
+
+    cout << "Your hex number is: " << result2 << endl;
+    */
+
+
 
     return 0;
 }
