@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using std::vector;
 using std::string;
@@ -58,12 +59,63 @@ int main()
     // if using "{ }", but the value inside "{ }" are different type with the object
     // then the compiler will initialized with "construct" instead of report error
 
+    // Add elements to vector
+    vector<int> v9;
+    for (int i = 0; i != 100; ++i)
+        v9.push_back(i);  // push the value at the end of v9 in turn
+    for (auto i1 : v9)
+        cout << i1 << endl;
+    // v9 has 100 elements, value from 0 to 99
 
+    /*
+    vector<string> v10;
+    string word;
+    while (cin >> word)
+    v10.push_back(word);
+    */
 
+    vector<int> v11{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    for (auto& i2 : v11)
+        i2 *= i2;
+    for (auto i3 : v11)
+        cout << i3 << " ";
+    cout << endl;
+
+    /*
+    // application (caculation)
+    vector<unsigned> scores(11, 0);
+    unsigned grade;
+    while (cin >> grade) {
+        if (grade <= 100)
+            ++scores[grade / 10];
+    }
+    for (auto& g : scores)
+        cout << g << " ";
+    cout << endl;
+    */
     
+    // Exercise 3.20
+    vector<int> vInt;
+    int iVal;
+    cout << "Please input a set of number: " << endl;
+    while (cin >> iVal)
+        vInt.push_back(iVal);
+    if (vInt.size() == 0)
+    {
+        cout << "No elements!" << endl;
+        return -1;
+    }
+    cout << "The result is: " << endl;
+    for (decltype(vInt.size()) i4 = 0; i4 < vInt.size(); i4++)
+    {
+        cout << vInt[i4] + vInt[vInt.size() - i4 - 1] << " ";
+        if ((i4 + 1) % 5 == 0)
+            cout << endl;
+    }
+    if (vInt.size() % 2 != 0)
+        cout << vInt[vInt.size() / 2];
 
-
-
+    return 0;
 
 }
 
