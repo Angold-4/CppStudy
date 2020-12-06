@@ -83,7 +83,8 @@ int main()
     if (g % 10 >= 3)
         if (g % 10 > 7)
             lgrade += '+';
-    else // this else if corresponding to the latest if (line 83)
+    else // this else if corresponding to the latest if (line 84)
+    // if you want to let this else statement correspond to line 83 statement, you can use "{}" to divide scope
         lgrade += '-';
     cout << lgrade << endl; // C+ 
 
