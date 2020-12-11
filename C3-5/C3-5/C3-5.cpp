@@ -20,6 +20,19 @@ constexpr int cexpr()
     return 1;
 }
 
+void iprint(int* beg, int* end)
+{
+    while (beg != end)
+        cout << *beg++ << endl;
+}
+
+void irprint(int* (&beg)[3]) 
+{
+    for (auto ele : beg)
+        cout << ele << endl;
+
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
@@ -57,6 +70,20 @@ int main()
     int(*pa4)[6] = &a4;  // must define the size of pointer array when initialized
     int(&ra4)[6] = a4; 
     // int* (&rpa4)[6]; TODO: find the ptr array
+
+    int* ptrarr[] = { a4,a4,a4 };
+    int* (&rptarr)[3] = ptrarr;
+    cout << "pointer array ref:" << endl;
+    irprint(rptarr);
+    // output:
+    // pointer array ref:
+    // 0098F4F4
+    // 0098F4F4
+    // 0098F4F4
+
+    // looking from the inside out will help you to understand
+
+
 
     // int a5[ncexpr()];  error: although the ncexpr() function(defined in line10) always return the same value
     // it is not a const expression (cexpr)
@@ -128,7 +155,7 @@ int main()
         cout << "False" << endl;
     }
 
-
+    /*
     // Exercise 3.40
     const int size = 5;
     int a12[size], a13[size], i;
@@ -161,7 +188,7 @@ int main()
                 cout << inp;
             cout << endl;
 
-            return -1;
+            return 1;
         }
         p6++;
         p7++;
@@ -176,7 +203,7 @@ int main()
     cout << endl;
 
     return 0;
-
+    */
 
 }
 
