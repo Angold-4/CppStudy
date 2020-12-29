@@ -150,6 +150,25 @@ int main()
     // After pexchange1() : pe1 = 19  pe2 = 9
 
 
+    // parameters in main()
+/*
+int main(int argc, char *argv[])
+{
+    cout << "argc: " << argc << endl;
+    cout << "argv[0]: " << argv[0] << endl;
+    cout << "argv[1]: " << argv[1] << endl;
+    cout << "argv[2]: " << argv[2] << endl;
+}
+*/
+    // when input:
+    // $ ./main Jiawei Wang
+    // output:
+    // argc: 3
+    // argv[0]: ./main
+    // argv[1]: Jiawei
+    // argv[2]: Wang
+
+
     // initializer_list
     // like vector, initializer list is also a class template type
     // for a function, if all the paraeter have same type but the number is not sure
