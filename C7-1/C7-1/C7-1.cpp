@@ -59,6 +59,11 @@ int main()
     cout << "Nul: " << Nul << endl;
     cout << "John: " << John << endl;
 
+    // example:
+    // line 32 in Sales_data.h:
+    // string isbn() const { return bookNo; }
+    // The usage of const after "isbn()" -- tell the compiler that "this" is a pointer which point to a const object
+    // Then a const Sales_data obj can call isbn()
 }
 
 
