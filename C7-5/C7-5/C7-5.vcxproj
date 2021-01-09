@@ -142,6 +142,9 @@
     <ClCompile Include="C7-5.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="Agg.h" />
+    <ClInclude Include="Debug.h" />
     <ClInclude Include="NoDefault.h" />
     <ClInclude Include="Sales_data2.h" />
   </ItemGroup>

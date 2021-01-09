@@ -11,6 +11,10 @@ class Sales_data2
 {
 	friend istream& read(istream&, Sales_data2&);
 	friend ostream& print(ostream&, const Sales_data2&);
+	
+public:
+	// member function
+	Sales_data2& combine(const Sales_data2&);
 
 public:
 	// init function
@@ -38,6 +42,22 @@ private:
 	double saleprice = 0.0;
 	double discount = 0.0;
 };
+
+Sales_data2& Sales_data2::combine(const Sales_data2& sd2)
+{
+	if (this->bookNo == sd2.bookNo)
+	{
+		units_sold += sd2.units_sold;
+		saleprice = (sd2.saleprice * sd2.units_sold + saleprice * units_sold) / (sd2.units_sold + units_sold);
+		if (sellingprice != 0)
+			discount = saleprice / sellingprice;
+	}
+	else
+		cerr << "Difference isbn of two sales data cannot be combined! " << endl;
+	return *this;
+
+}
+
 
 
 istream& read(istream& is, Sales_data2& sd)
